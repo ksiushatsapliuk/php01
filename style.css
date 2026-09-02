@@ -1,22 +1,22 @@
 /* Підключення шрифту через CSS */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* Глибока преміальна темна палітра */
+/* темна палітра */
 :root {
     --bg-gradient: radial-gradient(circle at top, #0d3829 0%, #051a12 60%, #020d09 100%);
     
-    /* Скло та поверхні */
+    /* поверхні */
     --card-bg: rgba(15, 43, 33, 0.65);
     --card-bg-hover: rgba(22, 59, 45, 0.85);
     --card-border: rgba(255, 255, 255, 0.08);
     --card-border-glow: rgba(82, 183, 136, 0.3);
 
-    /* Текст */
+    /* текст */
     --text-main: #f1f8f5;
     --text-muted: #82a396;
     --accent-emerald: #52b788;
 
-    /* Акценти та бейджі */
+    /* акценти та бейджі */
     --alert-color: #ff6b6b;
     --alert-bg: rgba(255, 107, 107, 0.12);
     --alert-border: rgba(255, 107, 107, 0.25);
