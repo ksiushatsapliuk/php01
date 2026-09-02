@@ -1,0 +1,252 @@
+/* Підключення шрифту через CSS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Зелена темна палітра */
+:root {
+    --bg-gradient: linear-gradient(135deg, #062319 0%, #0a3a2a 50%, #041d14 100%);
+    --card-bg: #0d281e;          /* Темно-зелений для карток */
+    --card-border: #164232;      /* Зелені рамки */
+    --text-main: #e8f5e9;        /* Світло-м'ятний текст */
+    --text-muted: #81c784;       /* Приглушений зелений */
+    --primary-accent: #2ec4b6;   /* Яскравий акцент */
+    
+    --alert-color: #ff6b6b;      /* Акцент для потрібного поливу */
+    --alert-bg: rgba(255, 107, 107, 0.15);
+    
+    --ok-color: #52b788;         /* Зелений статус */
+    --ok-bg: rgba(82, 183, 136, 0.15);
+    
+    --border-radius: 16px;
+    --transition: all 0.25s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    color: var(--text-main);
+    padding: 30px 15px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Шапка */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.header-icon {
+    width: 100px;
+    height: 100px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.header-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* Блок підсумку (Зелений градієнт) */
+.summary-card {
+    background: linear-gradient(135deg, #114b38, #1b6a50);
+    border: 1px solid #288d6b;
+    color: #ffffff;
+    padding: 22px 26px;
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+    box-shadow: 0 10px 30px rgba(10, 58, 42, 0.5);
+}
+
+.summary-label {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: bold;
+    color: #89fc8f; /* Салатовий акцент */
+}
+
+.summary-value {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.summary-value span {
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.summary-value small {
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+.summary-status-icon {
+    font-size: 38px;
+}
+
+.summary-icon-img {
+    width: 62px;
+    height: 62px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Сітка з картками */
+.plant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 18px;
+}
+
+.plant-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--card-border);
+    transition: var(--transition);
+}
+
+.plant-card:hover {
+    transform: translateY(-4px);
+    border-color: #2e7d32;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.plant-card.card-alert {
+    border-color: rgba(255, 107, 107, 0.4);
+}
+
+.plant-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+/* Аватарка рослини в картці */
+.plant-avatar {
+    width: 42px;
+    height: 42px;
+    background: rgba(46, 125, 50, 0.2);
+    border: 1px solid var(--card-border);
+    border-radius: 50%;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Картинка всередині аватарки */
+.plant-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Бейджі статусу */
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-alert {
+    background-color: var(--alert-bg);
+    color: var(--alert-color);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.badge-ok {
+    background-color: var(--ok-bg);
+    color: var(--ok-color);
+    border: 1px solid rgba(82, 183, 136, 0.3);
+}
+
+/* Текст картки */
+.plant-name {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--text-main);
+}
+
+.plant-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.plant-desc strong {
+    color: #ffffff;
+}
+
+/* Футер з показниками */
+.plant-card-footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 12px;
+    border-top: 1px solid var(--card-border);
+}
+
+.metric {
+    display: flex;
+    flex-direction: column;
+}
+
+.metric-label {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.metric-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-main);
+}
